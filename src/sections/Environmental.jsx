@@ -86,6 +86,31 @@ export default function Environmental() {
           </ResponsiveContainer>
         </ChartContainer>
 
+        <ChartContainer
+          title="AI Emissions: Added vs Reduced"
+          subtitle="By 2035, AI's reduction potential outweighs its own emissions by 32x"
+          source="Cornell/Xiao Nature Sustainability 2025; IEA 2025"
+          calculationKey="env.emissions_bar"
+          className="mb-8"
+        >
+          <ResponsiveContainer width="100%" height={280}>
+            <BarChart data={PARADOX_DATA} margin={{ left: 20, right: 20 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
+              <XAxis dataKey="category" tick={{ fill: CHART_THEME.axisPrimary, fontSize: 11 }} />
+              <YAxis tick={{ fill: CHART_THEME.axisLabel, fontSize: 12 }} tickFormatter={(v) => `${v} Mt`} />
+              <Tooltip
+                contentStyle={{ background: CHART_THEME.tooltipBg, border: `1px solid ${CHART_THEME.tooltipBorder}`, borderRadius: 14 }}
+                formatter={(v) => [`${v} Mt CO₂/yr`, '']}
+              />
+              <Bar dataKey="value" radius={[4, 4, 0, 0]}>
+                {PARADOX_DATA.map((entry, i) => (
+                  <Cell key={i} fill={entry.type === 'added' ? COLORS.red : COLORS.green} fillOpacity={0.8} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </ChartContainer>
+
         <div className="grid lg:grid-cols-2 gap-6 mb-8">
           <ChartContainer
             title="The Green Paradox"

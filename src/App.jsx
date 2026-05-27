@@ -14,6 +14,7 @@ export default function App() {
   return (
     <Layout>
       <Hero />
+      <About />
       <Employment />
       <SectorAnalysis />
       <CountryAdoption />
@@ -22,7 +23,6 @@ export default function App() {
       <SkillsGap />
       <MLInsights />
       <Methodology />
-      <About />
     </Layout>
   );
 }

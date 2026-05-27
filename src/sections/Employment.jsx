@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, Cell, ScatterChart, Scatter, ZAxis } from 'recharts';
 import ChartContainer from '../components/ChartContainer';
 import StatCard from '../components/StatCard';
 import SourceCitation from '../components/SourceCitation';
@@ -142,6 +142,47 @@ export default function Employment() {
                 strokeWidth={2}
               />
             </AreaChart>
+          </ResponsiveContainer>
+        </ChartContainer>
+
+        <ChartContainer
+          title="Job Growth vs Median Wage"
+          subtitle="Declining jobs cluster at $35-50K. Growing roles pay $60-130K. The displacement isn't random."
+          source="Bureau of Labor Statistics, Employment Projections & OES Wage Data 2024"
+          calculationKey="employment.wage_scatter"
+          className="mb-8"
+        >
+          <ResponsiveContainer width="100%" height={400}>
+            <ScatterChart margin={{ left: 20, right: 20, top: 20, bottom: 20 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
+              <XAxis
+                type="number"
+                dataKey="wage"
+                tick={{ fill: CHART_THEME.axisLabel, fontSize: 11 }}
+                tickFormatter={(v) => `$${(v / 1000).toFixed(0)}K`}
+                name="Median Wage"
+                label={{ value: 'Median Annual Wage', position: 'insideBottom', offset: -10, fill: CHART_THEME.axisLabel, fontSize: 11 }}
+              />
+              <YAxis
+                type="number"
+                dataKey="change"
+                tick={{ fill: CHART_THEME.axisLabel, fontSize: 11 }}
+                tickFormatter={(v) => `${v > 0 ? '+' : ''}${v}%`}
+                name="Projected Change"
+                label={{ value: 'Projected Change (%)', angle: -90, position: 'insideLeft', fill: CHART_THEME.axisLabel, fontSize: 11 }}
+              />
+              <ZAxis range={[60, 60]} />
+              <Tooltip
+                contentStyle={{ background: CHART_THEME.tooltipBg, border: `1px solid ${CHART_THEME.tooltipBorder}`, borderRadius: 14 }}
+                formatter={(v, name) => {
+                  if (name === 'Median Wage') return [`$${v.toLocaleString()}`, name];
+                  return [`${v > 0 ? '+' : ''}${v}%`, 'Projected Change'];
+                }}
+                labelFormatter={(_, payload) => payload?.[0]?.payload?.name || ''}
+              />
+              <Scatter name="Declining Jobs" data={DECLINING_JOBS} fill={COLORS.red} fillOpacity={0.8} />
+              <Scatter name="Growing Jobs" data={GROWING_JOBS} fill={COLORS.green} fillOpacity={0.8} />
+            </ScatterChart>
           </ResponsiveContainer>
         </ChartContainer>
 

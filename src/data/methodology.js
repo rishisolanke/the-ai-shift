@@ -28,6 +28,8 @@ export const METHODOLOGY = {
     "Same BLS projection model. Growth here is driven by population aging (healthcare demand), government policy (renewable energy mandates), and historical productivity trends, not AI predictions specifically.",
   "employment.layoffs_chart":
     "Data compiled from company announcements, government layoff filings, and news reports by the layoffs.fyi tracker. I verified the numbers against official government separation data and outplacement firm reports.",
+  "employment.wage_scatter":
+    "Each dot is one occupation from the BLS Employment Projections 2024-2034. The x-axis is the median annual wage from the BLS Occupational Employment and Wage Statistics (OES) survey. The y-axis is the projected 10-year employment change. Red dots are the 10 fastest-declining roles, green dots are the 10 fastest-growing. The pattern shows that jobs being automated tend to pay $35-50K while growing roles pay $60-130K.",
   "employment.demand_chart":
     "This diverging chart combines all 30 roles from the WEF Future of Jobs Report 2025 (Figure 3.2). The WEF surveyed 1,000+ employers across 55 countries. Each bar shows the % of employers who identified that role as fastest-growing or fastest-declining. Bars right = hiring intent, bars left = reduction intent. This is a global survey, so it reflects worldwide employer sentiment, not just the US.",
 
@@ -68,6 +70,8 @@ export const METHODOLOGY = {
     "Researchers analyzed the full carbon footprint of AI computing: manufacturing the chips, running them (factoring in each region's mix of fossil fuels vs. renewables), and cooling the facilities. The range (24-44 million tons) reflects uncertainty about how clean the grid will be.",
   "env.1400mt_reduction":
     "The IEA estimated how much CO2 could be saved if AI is deployed at scale for energy optimization: smarter power grids, precision farming, efficient buildings, optimized shipping routes, and faster materials science. This is potential, not guaranteed. It requires deliberate deployment.",
+  "env.emissions_bar":
+    "This bar chart compares two numbers side by side. The left bar (44 Mt) is the high-end estimate of CO2 that AI data centers will add per year by 2030, from Cornell/Xiao's Nature Sustainability paper. The right bar (1,400 Mt) is the IEA's estimate of how much CO2 AI could help reduce per year by 2035 through energy optimization. The reduction potential is about 32x larger than the emissions.",
   "env.energy_chart":
     "The chart shows actual measured electricity use (2020-2024) from utility reports, then projected use (2025-2030) based on announced data center construction and AI chip orders. The dashed portion marks where projections begin.",
 
@@ -106,6 +110,8 @@ export const METHODOLOGY = {
     "The WEF projects that 14% of the global workforce may need to switch to a completely different occupation by 2030. Not just learn new tools within their current role, but change careers entirely.",
   "skills.170k_median":
     "I aggregated salary data from Levels.fyi, Glassdoor, and LinkedIn for US-based data analysis roles that explicitly require AI or machine learning skills. The $170K median includes base salary, stock options, and bonuses.",
+  "skills.demand_vs_pay":
+    "Each dot represents an AI skill category. The x-axis is the number of open job postings mentioning that skill (from aggregated job board data). The y-axis is the median total compensation for roles requiring that skill. Data Analysis has the most openings but NLP and Computer Vision roles pay more per position, likely because the talent pool is smaller.",
 
   // ─── ML INSIGHTS ───
   "ml.clustering":

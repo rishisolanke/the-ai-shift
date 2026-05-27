@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, ScatterChart, Scatter, ZAxis } from 'recharts';
 import ChartContainer from '../components/ChartContainer';
 import StatCard from '../components/StatCard';
 import SourceCitation from '../components/SourceCitation';
@@ -96,6 +96,47 @@ export default function SkillsGap() {
             </ResponsiveContainer>
           </ChartContainer>
         </div>
+
+        <ChartContainer
+          title="AI Skill Demand vs Median Pay"
+          subtitle="NLP and Computer Vision pay the most per role. Data Analysis has the highest demand by far."
+          source="Industry job postings aggregation, 2025"
+          calculationKey="skills.demand_vs_pay"
+          className="mb-8"
+        >
+          <ResponsiveContainer width="100%" height={350}>
+            <ScatterChart margin={{ left: 20, right: 20, top: 10, bottom: 20 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
+              <XAxis
+                type="number"
+                dataKey="demand"
+                tick={{ fill: CHART_THEME.axisLabel, fontSize: 11 }}
+                tickFormatter={(v) => `${(v / 1000).toFixed(0)}K`}
+                name="Open Roles"
+                label={{ value: 'Open Roles', position: 'insideBottom', offset: -10, fill: CHART_THEME.axisLabel, fontSize: 11 }}
+              />
+              <YAxis
+                type="number"
+                dataKey="median_pay"
+                tick={{ fill: CHART_THEME.axisLabel, fontSize: 11 }}
+                tickFormatter={(v) => `$${(v / 1000).toFixed(0)}K`}
+                name="Median Pay"
+                domain={[120000, 180000]}
+                label={{ value: 'Median Pay', angle: -90, position: 'insideLeft', fill: CHART_THEME.axisLabel, fontSize: 11 }}
+              />
+              <ZAxis range={[80, 80]} />
+              <Tooltip
+                contentStyle={{ background: CHART_THEME.tooltipBg, border: `1px solid ${CHART_THEME.tooltipBorder}`, borderRadius: 14 }}
+                formatter={(v, name) => {
+                  if (name === 'Open Roles') return [v.toLocaleString(), name];
+                  return [`$${v.toLocaleString()}`, 'Median Pay'];
+                }}
+                labelFormatter={(_, payload) => payload?.[0]?.payload?.skill || ''}
+              />
+              <Scatter name="AI Skills" data={TOP_AI_SKILLS} fill={COLORS.green} fillOpacity={0.8} />
+            </ScatterChart>
+          </ResponsiveContainer>
+        </ChartContainer>
 
         <ChartContainer
           title="WEF Core Skills for 2030"

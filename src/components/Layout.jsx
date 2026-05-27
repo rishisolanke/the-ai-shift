@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Menu, X, Github, Linkedin } from 'lucide-react';
 
 const NAV_ITEMS = [
+  { id: 'about', label: 'About' },
   { id: 'employment', label: 'Employment' },
   { id: 'sectors', label: 'Sectors' },
   { id: 'countries', label: 'Countries' },
