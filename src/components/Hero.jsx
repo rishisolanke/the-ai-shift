@@ -49,17 +49,20 @@ export default function Hero() {
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-text-secondary font-light leading-relaxed">
-            What is AI <em>actually</em> doing to the world right now? I pulled data from
-            <span className="text-text-primary font-semibold">12+ verified sources</span> across
-            employment, economy, environment, and skills to figure that out. No hype, no fear-mongering.
-            Just numbers and what they tell us.
+            I analyzed <span className="text-text-primary font-semibold">12+ public datasets</span> to
+            figure out what AI is actually doing to jobs, the economy, the environment, and the skills market.
+            Here's what I found: the WEF projects 92M jobs displaced but 170M created by 2030.
+            Companies are spending $660B on AI while GDP impact is still near zero because 75% of that money
+            goes to imported chips. Data centers will use more electricity than Japan by 2030. Workers without
+            degrees face 11x higher automation risk, and people with AI skills already earn 56% more.
+            The countries building AI and the countries actually using it are completely different.
           </p>
           <p className="mt-4 text-sm text-text-muted leading-relaxed max-w-2xl mx-auto">
             Every number on this page links back to a public source. Click any
             <span className="text-accent-green mx-1">dotted-underlined term</span>
-            for a quick definition, or expand
+            for a definition, or expand
             <span className="text-accent-green mx-1">"How was this calculated?"</span>
-            below any chart to see the methodology.
+            under any chart for the full methodology.
           </p>
           <p className="mt-3 text-xs text-text-faint">
             By Rushikesh Solanke
