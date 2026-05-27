@@ -9,20 +9,19 @@ export default function About() {
 
           <div className="card text-left mb-8">
             <p className="text-text-secondary leading-relaxed mb-4">
-              As a data analyst and immigrant, I built this project to understand what AI is
-              <em> really</em> doing to the global workforce — not the hype, not the doom, just
-              what the data says. I analyzed 12+ datasets from government agencies, international
-              organizations, and research institutions to find the patterns.
+              I built this project because I wanted to understand what AI is actually doing to the global
+              workforce. There's a lot of noise out there, so I went straight to the data. I pulled
+              from 12+ datasets across government agencies, international organizations, and research
+              institutions to see what the numbers actually say.
             </p>
             <p className="text-text-secondary leading-relaxed mb-4">
-              This project demonstrates full-stack data analytics capabilities: Python ETL pipelines,
-              statistical analysis, machine learning models, SQL query design, a React visualization
-              dashboard, and a RAG-powered Q&A system.
+              The full stack behind this includes Python ETL pipelines, statistical analysis,
+              machine learning models (K-Means, XGBoost, LSTM), SQL queries, this React dashboard,
+              and a RAG-powered Q&A system built with LangChain.
             </p>
             <p className="text-text-secondary leading-relaxed">
-              Every number on this dashboard is traceable to a verified public source. No data
-              was fabricated or hallucinated. Where data is uncertain or contested, I've noted
-              the limitations explicitly.
+              Every number on this dashboard traces back to a verified public source. Nothing was
+              made up. Where data is uncertain or debated, I've called that out directly.
             </p>
           </div>
 

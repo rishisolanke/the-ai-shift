@@ -41,8 +41,8 @@ export default function SkillsGap() {
           <span className="text-xs font-mono uppercase tracking-wider text-accent-red">Dimension 7</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-4">The Skills Gap</h2>
           <p className="text-text-secondary max-w-3xl text-lg">
-            Automation risk is 11x higher for workers without university degrees (22% vs 2%).
-            The AI divide is fundamentally an education divide.
+            Workers without a university degree face 11x higher automation risk (22% vs 2%).
+            At its core, the AI divide is really an education divide.
           </p>
         </div>
 
@@ -56,7 +56,7 @@ export default function SkillsGap() {
         <div className="grid lg:grid-cols-2 gap-6 mb-8">
           <ChartContainer
             title="Automation Risk by Education Level"
-            subtitle={<>Workers without university degrees face dramatically higher displacement (<InfoTooltip term="OECD" /> data)</>}
+            subtitle={<>Workers without university degrees face significantly higher displacement risk (<InfoTooltip term="OECD" /> data)</>}
             source="OECD Employment Outlook (automation risk estimates)"
           >
             <ResponsiveContainer width="100%" height={250}>
@@ -116,7 +116,7 @@ export default function SkillsGap() {
         </ChartContainer>
 
         <SourceCitation sources={[
-          { name: 'OECD Employment Outlook — Automation risk by education level' },
+          { name: 'OECD Employment Outlook, Automation risk by education level' },
           { name: 'WEF Future of Jobs Report 2025', url: 'https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf' },
           { name: 'Coursera Global Skills Report 2025' },
           { name: 'Mercer Global Talent Trends 2026' },

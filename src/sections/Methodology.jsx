@@ -16,13 +16,13 @@ const DATA_SOURCES = [
 ];
 
 const CAVEATS = [
-  'BLS Employment Projections explicitly do NOT model AI-specific disruption. They serve as a baseline counterfactual only.',
-  'Census BTOS changed its AI question wording on December 3, 2025. Pre/post comparisons should be flagged.',
-  'Kaggle layoffs data is sourced from layoffs.fyi (one person\'s web scrape). We triangulate with BLS JOLTS and Indeed data where possible.',
-  'Correlation does not imply causation throughout this analysis.',
-  'Some country-level data has gaps for smaller nations.',
-  'Self-reported AI adoption (Microsoft survey) may overstate actual productive use.',
-  'The Congressional Report figure (54,694 AI-cited layoffs) uses self-reported "AI" reasons which may conflate automation with cost-cutting.',
+  'BLS Employment Projections do NOT model AI-specific disruption. They only serve as a baseline for comparison.',
+  'Census BTOS changed its AI question wording on December 3, 2025, so be careful comparing pre and post data.',
+  'Kaggle layoffs data comes from layoffs.fyi, which is one person\'s web scrape. I cross-checked with BLS JOLTS and Indeed data where I could.',
+  'Correlation does not mean causation. That applies to everything in this analysis.',
+  'Some country-level data has gaps, especially for smaller nations.',
+  'Self-reported AI adoption from the Microsoft survey likely overstates how much people are actually using AI productively.',
+  'The Congressional Report figure (54,694 AI-cited layoffs) is based on companies self-reporting "AI" as the reason, which could include general automation or cost-cutting relabeled as AI.',
 ];
 
 export default function Methodology() {
@@ -33,8 +33,8 @@ export default function Methodology() {
           <span className="text-xs font-mono uppercase tracking-wider text-text-secondary">Transparency</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-4">Methodology & Sources</h2>
           <p className="text-text-secondary max-w-3xl text-lg">
-            Every number in this analysis traces back to a verified public source.
-            Below is the complete data provenance and important caveats.
+            Every number in this analysis links back to a verified public source.
+            Here's the full list of where the data comes from, plus the caveats you should know about.
           </p>
         </div>
 

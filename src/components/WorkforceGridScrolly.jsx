@@ -195,7 +195,7 @@ export default function WorkforceGridScrolly({ currentStep = 0 }) {
           ctx.fillText(`+${Math.max(0, net)}M`, w * 0.5, h * 0.12);
           ctx.font = "500 14px 'Plus Jakarta Sans', sans-serif";
           ctx.fillStyle = `rgba(200, 200, 200, ${entrance * 0.6})`;
-          ctx.fillText(`${created}M created — 92M displaced`, w * 0.5, h * 0.12 + 28);
+          ctx.fillText(`${created}M created, 92M displaced`, w * 0.5, h * 0.12 + 28);
         }
 
         ctx.restore();

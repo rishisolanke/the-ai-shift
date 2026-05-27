@@ -41,9 +41,9 @@ export default function EconomicParadox() {
           <span className="text-xs font-mono uppercase tracking-wider text-accent-orange">Dimension 6</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-4">The Economic Paradox</h2>
           <p className="text-text-secondary max-w-3xl text-lg">
-            Companies will spend ~$660B on AI <InfoTooltip term="Capex" /> in 2026, yet Goldman Sachs says AI has contributed
-            "basically zero" to US <InfoTooltip term="GDP" />. The paradox: 75% of that spending imports hardware,
-            boosting Taiwan and Korea's economies instead.
+            Companies will spend around $660B on AI <InfoTooltip term="Capex" /> in 2026, but Goldman Sachs says AI has added
+            "basically zero" to US <InfoTooltip term="GDP" /> so far. Why? Because 75% of that spending goes toward imported
+            hardware, which ends up boosting Taiwan and Korea's economies instead.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function EconomicParadox() {
         <div className="grid lg:grid-cols-2 gap-6 mb-8">
           <ChartContainer
             title={<>AI Investment vs <InfoTooltip term="GDP" /> Contribution</>}
-            subtitle="Investment soars while measurable economic output remains near zero"
+            subtitle="Investment keeps climbing, but measurable economic output is still near zero"
             source="Goldman Sachs Global Investment Research (Hatzius); Stanford AI Index 2026"
             calculationKey="economic.investment_chart"
           >
@@ -90,7 +90,7 @@ export default function EconomicParadox() {
 
           <ChartContainer
             title="AI Skills Wage Premium"
-            subtitle="Workers with AI skills earn increasingly more than peers"
+            subtitle="Workers with AI skills are earning more and more over their peers each year"
             source="PwC AI Jobs Barometer 2025"
             calculationKey="economic.wage_premium_chart"
           >
@@ -145,11 +145,11 @@ export default function EconomicParadox() {
         </ChartContainer>
 
         <div className="card mb-8">
-          <h3 className="text-lg font-semibold mb-3">Additional Context</h3>
+          <h3 className="text-lg font-semibold mb-3">More Context</h3>
           <ul className="space-y-2 text-text-secondary text-sm">
             <li className="flex items-start gap-2">
               <span className="text-accent-yellow mt-1">-</span>
-              <span>PwC projects AI could boost global <InfoTooltip term="GDP" /> by 15% by 2035 ($15.7T) — but this is potential, not realized</span>
+              <span>PwC projects AI could boost global <InfoTooltip term="GDP" /> by 15% by 2035 ($15.7T), but that's potential, not what's actually happened yet</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-accent-yellow mt-1">-</span>
@@ -157,7 +157,7 @@ export default function EconomicParadox() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-accent-red mt-1">-</span>
-              <span>MIT found 95% of AI pilots never moved past testing phase (~$30-40B invested in stalled projects)</span>
+              <span>MIT found 95% of AI pilot programs never made it past the testing phase (roughly $30-40B sitting in stalled projects)</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-accent-yellow mt-1">-</span>
@@ -165,7 +165,7 @@ export default function EconomicParadox() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-accent-green mt-1">-</span>
-              <span>CEPR research: +0.6 percentage points productivity growth per 10pp increase in AI adoption</span>
+              <span>CEPR research shows a 10 percentage point increase in AI adoption correlates with +0.6pp productivity growth</span>
             </li>
           </ul>
         </div>

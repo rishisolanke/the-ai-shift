@@ -60,16 +60,16 @@ export default function MLInsights() {
           <span className="text-xs font-mono uppercase tracking-wider text-accent-green">Machine Learning</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-4">ML Model Insights</h2>
           <p className="text-text-secondary max-w-3xl text-lg">
-            Four machine learning models reveal patterns across the data: country clustering identifies
-            AI archetypes, <InfoTooltip term="XGBoost" /> predicts job displacement risk, and time-series forecasting
-            projects future trends.
+            I trained four ML models on this data. Country clustering groups nations into AI archetypes,
+            <InfoTooltip term="XGBoost" /> predicts which jobs are most at risk, and an LSTM time-series model
+            forecasts where layoffs are heading through 2026.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-8">
           <ChartContainer
             title={<><InfoTooltip term="K-Means" /> Country Clustering (<InfoTooltip term="PCA Projection" />)</>}
-            subtitle="Countries grouped into AI archetypes based on adoption, GDP, preparedness, internet access, R&D"
+            subtitle="Countries grouped by AI adoption, GDP, preparedness, internet access, and R&D spending"
             source="Model trained on: Microsoft AI Diffusion, World Bank, IMF AIPI data"
             calculationKey="ml.clustering"
           >
@@ -106,7 +106,7 @@ export default function MLInsights() {
 
           <ChartContainer
             title={<><InfoTooltip term="XGBoost" /> Feature Importance (Job Risk)</>}
-            subtitle={<><InfoTooltip term="SHAP values" />: which factors most predict automation displacement</>}
+            subtitle={<><InfoTooltip term="SHAP values" /> showing which factors best predict automation displacement</>}
             source="Model trained on BLS Projections + EIG AI Exposure Scores"
             calculationKey="ml.xgboost"
           >

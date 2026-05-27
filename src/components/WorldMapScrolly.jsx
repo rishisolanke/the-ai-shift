@@ -218,7 +218,7 @@ export default function WorldMapScrolly({ currentStep = 0 }) {
           ctx.shadowBlur = 0;
           ctx.font = "500 11px 'Plus Jakarta Sans', sans-serif";
           ctx.fillStyle = `rgba(200, 200, 200, ${callAlpha * 0.7})`;
-          ctx.fillText('UAE — Global #1', uaeX, uaeY - 18);
+          ctx.fillText('UAE - Global #1', uaeX, uaeY - 18);
 
           const usaX = mapPad + usa.x * mapW;
           const usaY = mapPad + usa.y * mapH;
@@ -227,7 +227,7 @@ export default function WorldMapScrolly({ currentStep = 0 }) {
           ctx.fillText('34%', usaX, usaY - 35);
           ctx.font = "500 11px 'Plus Jakarta Sans', sans-serif";
           ctx.fillStyle = `rgba(200, 200, 200, ${callAlpha * 0.6})`;
-          ctx.fillText('USA — Outside top 20', usaX, usaY - 18);
+          ctx.fillText('USA - Outside top 20', usaX, usaY - 18);
 
           ctx.restore();
         }

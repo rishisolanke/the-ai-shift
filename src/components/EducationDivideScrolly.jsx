@@ -29,7 +29,7 @@ const SKILLS = [
 ];
 
 const WEF_SKILLS = [
-  { skill: 'Analytical Thinking', rank: 1, note: '#1 — above AI itself' },
+  { skill: 'Analytical Thinking', rank: 1, note: '#1 - above AI itself' },
   { skill: 'Resilience & Flexibility', rank: 2, note: 'Human advantage' },
   { skill: 'AI & Big Data', rank: 3, note: 'Technical foundation' },
   { skill: 'Leadership', rank: 4, note: 'Human advantage' },
@@ -308,7 +308,7 @@ export default function EducationDivideScrolly({ currentStep = 0 }) {
             ctx.textAlign = 'center';
             ctx.fillStyle = `rgba(255, 215, 64, ${hlAlpha * 0.6})`;
             const bottomY = startY + 20 + WEF_SKILLS.length * (cardH + gap) + 16;
-            ctx.fillText('5 of 8 top skills are uniquely human — not technical', centerX, bottomY);
+            ctx.fillText('5 of 8 top skills are uniquely human, not technical', centerX, bottomY);
           }
 
           ctx.restore();

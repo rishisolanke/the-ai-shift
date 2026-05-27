@@ -49,16 +49,17 @@ export default function Hero() {
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-text-secondary font-light leading-relaxed">
-            What is AI <em>actually</em> doing to the world? Not the hype, not the doom —
-            just what the data says. This project analyzes <span className="text-text-primary font-semibold">12+ verified sources</span> across
-            employment, economy, environment, and skills to find the real patterns.
+            What is AI <em>actually</em> doing to the world right now? I pulled data from
+            <span className="text-text-primary font-semibold">12+ verified sources</span> across
+            employment, economy, environment, and skills to figure that out. No hype, no fear-mongering.
+            Just numbers and what they tell us.
           </p>
           <p className="mt-4 text-sm text-text-muted leading-relaxed max-w-2xl mx-auto">
-            Every number on this page traces back to a public source. Click any
+            Every number on this page links back to a public source. Click any
             <span className="text-accent-green mx-1">dotted-underlined term</span>
-            for a plain-English definition, or expand
+            for a quick definition, or expand
             <span className="text-accent-green mx-1">"How was this calculated?"</span>
-            below any chart for methodology.
+            below any chart to see the methodology.
           </p>
           <p className="mt-3 text-xs text-text-faint">
             By Rushikesh Solanke

@@ -35,8 +35,8 @@ export default function SectorAnalysis() {
           <span className="text-xs font-mono uppercase tracking-wider text-accent-green">Dimension 2</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-4">Sector & Industry Analysis</h2>
           <p className="text-text-secondary max-w-3xl text-lg">
-            AI adoption varies dramatically by sector — from 37% in tech to under 6% in agriculture.
-            The impact on jobs depends heavily on the nature of work within each industry.
+            AI adoption is all over the place depending on the industry. Tech leads at 37%, while agriculture
+            sits below 6%. How much AI affects jobs in a given sector comes down to the type of work being done.
           </p>
         </div>
 

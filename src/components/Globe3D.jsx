@@ -433,7 +433,7 @@ export default function Globe3D() {
                       fontWeight={700}
                       fontFamily="'Plus Jakarta Sans', sans-serif"
                     >
-                      {c.name} — {c.adoption}%
+                      {c.name} · {c.adoption}%
                     </text>
                   </g>
                 )}

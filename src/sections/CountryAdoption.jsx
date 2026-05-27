@@ -59,8 +59,8 @@ export default function CountryAdoption() {
           <span className="text-xs font-mono uppercase tracking-wider text-accent-yellow">Dimension 3</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-4">Global AI Adoption</h2>
           <p className="text-text-secondary max-w-3xl text-lg">
-            The UAE leads global AI adoption at 70%, while the US — despite being #1 in AI building —
-            ranks outside the top 20 in actual usage. Building AI and using AI are different capabilities.
+            The UAE leads global AI adoption at 70%, while the US, despite being #1 in building AI,
+            ranks outside the top 20 in actual usage. Building AI and using it are two very different things.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function CountryAdoption() {
         <div className="grid lg:grid-cols-2 gap-6 mb-8">
           <ChartContainer
             title={<>AI Adoption vs <InfoTooltip term="GDP" /> Per Capita</>}
-            subtitle="Some developing nations leapfrog wealthy ones in AI usage"
+            subtitle="Some developing countries are outpacing wealthy ones in AI usage"
             source="Microsoft AI Diffusion Q1 2026; World Bank GDP data"
             calculationKey="country.scatter_chart"
           >
@@ -138,7 +138,7 @@ export default function CountryAdoption() {
 
         <ChartContainer
           title="Private AI Investment by Country (2025)"
-          subtitle="The US dominates AI investment, outspending China 23x"
+          subtitle="The US outspends China 23x on private AI investment"
           source="Stanford AI Index Report 2026"
           calculationKey="country.investment_chart"
           className="mb-8"

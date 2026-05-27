@@ -51,8 +51,9 @@ export default function Employment() {
           <span className="text-xs font-mono uppercase tracking-wider text-accent-green">Dimension 1</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-4">Employment & Job Displacement</h2>
           <p className="text-text-secondary max-w-3xl text-lg">
-            AI will displace 92 million jobs globally by 2030 while creating 170 million new ones
-            — a net gain of 78 million. But the transition won't be painless.
+            AI will displace 92 million jobs globally by 2030, but it will also create 170 million new ones.
+            That's a net gain of 78 million. The catch is that the people losing jobs and the people getting new ones
+            are often not the same people.
           </p>
         </div>
 
@@ -66,7 +67,7 @@ export default function Employment() {
         <div className="grid lg:grid-cols-2 gap-6 mb-8">
           <ChartContainer
             title="Fastest Declining Occupations (2024-2034)"
-            subtitle={<>BLS <InfoTooltip term="BLS" /> projections — these do NOT model AI-specific disruption</>}
+            subtitle={<>BLS <InfoTooltip term="BLS" /> projections. Note: these do NOT model AI-specific disruption</>}
             source="Bureau of Labor Statistics, Employment Projections 2024-2034"
             calculationKey="employment.declining_chart"
           >
@@ -149,7 +150,7 @@ export default function Employment() {
           <ul className="space-y-2 text-text-secondary text-sm">
             <li className="flex items-start gap-2">
               <span className="text-accent-red mt-1">-</span>
-              <span><InfoTooltip term="WEF" /> projects 92M jobs displaced but 170M created globally by 2030 — net +78M (WEF Future of Jobs 2025)</span>
+              <span><InfoTooltip term="WEF" /> projects 92M jobs displaced but 170M created globally by 2030, so net +78M (WEF Future of Jobs 2025)</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-accent-yellow mt-1">-</span>

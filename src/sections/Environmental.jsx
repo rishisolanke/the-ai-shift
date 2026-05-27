@@ -39,8 +39,9 @@ export default function Environmental() {
           <span className="text-xs font-mono uppercase tracking-wider text-accent-yellow">Dimension 4</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-4">Environmental Impact</h2>
           <p className="text-text-secondary max-w-3xl text-lg">
-            Data centers will consume more electricity than Japan by 2030 — yet the same AI
-            technology could help reduce 1,400 <InfoTooltip term="Mt CO₂" /> annually if deployed for optimization.
+            By 2030, data centers will use more electricity than all of Japan. At the same time,
+            AI could help cut 1,400 <InfoTooltip term="Mt CO₂" /> per year if it's used for energy optimization.
+            That's the tradeoff.
           </p>
         </div>
 
@@ -88,7 +89,7 @@ export default function Environmental() {
         <div className="grid lg:grid-cols-2 gap-6 mb-8">
           <ChartContainer
             title="The Green Paradox"
-            subtitle="AI adds emissions AND enables massive reductions"
+            subtitle="AI adds emissions but also enables large-scale reductions"
             source="Cornell/Xiao 2025 (emissions); IEA 2025 (reductions)"
           >
             <div className="space-y-6 py-4">
@@ -111,8 +112,8 @@ export default function Environmental() {
                 </div>
               </div>
               <p className="text-xs text-text-secondary/60 mt-4">
-                Scale: the reduction potential is ~32x larger than emissions added.
-                AI for energy optimization, grid management, and materials science could offset its own footprint many times over.
+                For scale, the reduction potential is roughly 32x larger than the emissions AI adds.
+                If applied to energy grids, farming, and materials science, AI could offset its own footprint many times over.
               </p>
             </div>
           </ChartContainer>
@@ -145,7 +146,7 @@ export default function Environmental() {
 
         <SourceCitation sources={[
           { name: 'IEA, Energy and AI Report, April 2025', url: 'https://iea.blob.core.windows.net/assets/dd7c2387-2f60-4b60-8c5f-6563b6aa1e4c/EnergyandAI.pdf' },
-          { name: 'Cornell/Xiao, Nature Sustainability 2025 — AI server CO₂ and water projections', url: 'https://www.nature.com/articles/s41893-025-01681-y' },
+          { name: 'Cornell/Xiao, Nature Sustainability 2025, AI server CO₂ and water projections', url: 'https://www.nature.com/articles/s41893-025-01681-y' },
           { name: 'EPA eGRID 2023 rev2 (Grid Emissions Data)', url: 'https://www.epa.gov/egrid/download-data' },
           { name: 'Google 2025 Environmental Report', url: 'https://www.gstatic.com/gumdrop/sustainability/google-2025-environmental-report.pdf' },
         ]} />
