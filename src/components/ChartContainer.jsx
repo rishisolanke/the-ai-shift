@@ -2,7 +2,7 @@ import { useIntersection } from '../hooks/useIntersection';
 import CalculationDropdown from './CalculationDropdown';
 import { METHODOLOGY } from '../data/methodology';
 
-export default function ChartContainer({ title, subtitle, source, calculationKey, children, className = '' }) {
+export default function ChartContainer({ title, subtitle, source, calculationKey, summary, children, className = '' }) {
   const [ref, isVisible] = useIntersection();
   const calculationText = calculationKey ? METHODOLOGY[calculationKey] : null;
 
@@ -17,6 +17,12 @@ export default function ChartContainer({ title, subtitle, source, calculationKey
       </div>
 
       <div className="w-full min-h-[300px]">{children}</div>
+
+      {summary && (
+        <p className="mt-3 text-sm text-text-secondary/80 leading-relaxed">
+          {summary}
+        </p>
+      )}
 
       {calculationText && <CalculationDropdown text={calculationText} />}
 

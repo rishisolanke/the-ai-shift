@@ -60,6 +60,7 @@ export default function EconomicParadox() {
             subtitle="Investment keeps climbing, but measurable economic output is still near zero"
             source="Goldman Sachs Global Investment Research (Hatzius); Stanford AI Index 2026"
             calculationKey="economic.investment_chart"
+            summary="AI investment went from $68B in 2020 to $660B projected for 2026, but GDP contribution barely moved from 0.1% to 0.4%. A lot of money is going in with very little economic output coming back so far."
           >
             <ResponsiveContainer width="100%" height={350}>
               <BarChart data={INVESTMENT_VS_GDP} margin={{ left: 20, right: 40 }}>
@@ -93,6 +94,7 @@ export default function EconomicParadox() {
             subtitle="Workers with AI skills are earning more and more over their peers each year"
             source="PwC AI Jobs Barometer 2025"
             calculationKey="economic.wage_premium_chart"
+            summary="The wage premium for AI skills jumped from 12% in 2018 to 56% in 2025. If you know AI, you're making over half more than your peers doing similar work without those skills."
           >
             <ResponsiveContainer width="100%" height={350}>
               <LineChart data={WAGE_PREMIUM} margin={{ left: 20, right: 20 }}>
@@ -125,6 +127,7 @@ export default function EconomicParadox() {
           title="The Import Leakage Problem"
           subtitle="Where data center hardware spending actually flows"
           source="Goldman Sachs analysis; supply chain estimates"
+          summary="Out of $660B in AI capex, about $495B (75%) goes to imported components, with $380B flowing to Taiwan and South Korea. The US GDP contribution from all that spending? Basically zero."
           className="mb-8"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-8">

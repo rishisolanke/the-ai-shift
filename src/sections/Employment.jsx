@@ -70,6 +70,7 @@ export default function Employment() {
             subtitle={<>BLS <InfoTooltip term="BLS" /> projections. Note: these do NOT model AI-specific disruption</>}
             source="Bureau of Labor Statistics, Employment Projections 2024-2034"
             calculationKey="employment.declining_chart"
+            summary="Word processors and data entry keyers are taking the biggest hits, down 36% and 33%. Almost every role on this list pays under $50K and involves repetitive tasks."
           >
             <ResponsiveContainer width="100%" height={350}>
               <BarChart data={DECLINING_JOBS} layout="vertical" margin={{ left: 140, right: 20 }}>
@@ -95,6 +96,7 @@ export default function Employment() {
             subtitle="AI-adjacent and healthcare roles lead growth"
             source="Bureau of Labor Statistics, Employment Projections 2024-2034"
             calculationKey="employment.growing_chart"
+            summary="Wind turbine techs (+60%) and nurse practitioners (+52%) are leading the pack. Most of these growing roles pay well over $100K, except home health aides at $33K."
           >
             <ResponsiveContainer width="100%" height={350}>
               <BarChart data={GROWING_JOBS} layout="vertical" margin={{ left: 160, right: 20 }}>
@@ -121,6 +123,7 @@ export default function Employment() {
           subtitle="2025 figure represents AI-cited layoffs specifically"
           source="Kaggle Tech Layoffs Dataset; Congressional AI Jobs Report (Dec 2025)"
           calculationKey="employment.layoffs_chart"
+          summary="Tech layoffs peaked at 263K in 2023 and have been coming down since. The 2025 number (55K) only counts layoffs where companies specifically cited AI as the reason."
           className="mb-8"
         >
           <ResponsiveContainer width="100%" height={300}>
@@ -150,6 +153,7 @@ export default function Employment() {
           subtitle="Declining jobs cluster at $35-50K. Growing roles pay $60-130K. The displacement isn't random."
           source="Bureau of Labor Statistics, Employment Projections & OES Wage Data 2024"
           calculationKey="employment.wage_scatter"
+          summary="The red dots (shrinking jobs) all bunch up in the $36-68K range. The green dots (growing jobs) are spread from $34K to $127K, but most cluster above $100K. There's a clear wage gap between what's going away and what's replacing it."
           className="mb-8"
         >
           <ResponsiveContainer width="100%" height={400}>

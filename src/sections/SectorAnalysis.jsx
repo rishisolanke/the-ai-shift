@@ -52,6 +52,7 @@ export default function SectorAnalysis() {
           subtitle={<>Percentage of firms using AI, by <InfoTooltip term="NAICS" /> sector</>}
           source="Census Bureau, Business Trends and Outlook Survey (BTOS), 2025. Note: methodology changed Dec 3, 2025"
           calculationKey="sector.adoption_chart"
+          summary="IT leads at 37% adoption, finance is at 30%, and agriculture is way behind at 5%. There's a huge gap between desk-job industries and physical-work industries."
           className="mb-8"
         >
           <ResponsiveContainer width="100%" height={400}>
@@ -76,6 +77,7 @@ export default function SectorAnalysis() {
           title="Sector Vulnerability Assessment"
           subtitle="Industries most and least affected by AI automation"
           source="MIT/BU (manufacturing); Oxford Economics (2030 projections); BLS"
+          summary="Almost every sector here is rated high-risk except clinical healthcare, where AI helps doctors rather than replacing them. Medical transcription is already 99% automated, while nursing is growing 52%."
           className="mb-8"
         >
           <div className="overflow-x-auto">

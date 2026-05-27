@@ -58,6 +58,7 @@ export default function SkillsGap() {
             title="Automation Risk by Education Level"
             subtitle={<>Workers without university degrees face significantly higher displacement risk (<InfoTooltip term="OECD" /> data)</>}
             source="OECD Employment Outlook (automation risk estimates)"
+            summary="Workers with lower secondary education face 22% automation risk, while university grads face just 2%. That's an 11x difference based on education alone."
           >
             <ResponsiveContainer width="100%" height={250}>
               <BarChart data={RISK_BY_EDUCATION} margin={{ left: 20, right: 20 }}>
@@ -81,6 +82,7 @@ export default function SkillsGap() {
             title="Top AI Job Categories by Demand"
             subtitle="Number of open roles and median compensation"
             source="Industry job postings aggregation, 2025"
+            summary="Data analysis leads with 58K open roles, followed by machine learning at 42K. Even the smallest category here (prompt engineering) still has nearly 10K openings."
           >
             <ResponsiveContainer width="100%" height={350}>
               <BarChart data={TOP_AI_SKILLS} layout="vertical" margin={{ left: 160, right: 20 }}>
@@ -102,6 +104,7 @@ export default function SkillsGap() {
           subtitle="NLP and Computer Vision pay the most per role. Data Analysis has the highest demand by far."
           source="Industry job postings aggregation, 2025"
           calculationKey="skills.demand_vs_pay"
+          summary="NLP pays the highest median at $172K but has fewer openings (28K). Data analysis has way more demand (58K roles) at $170K. Prompt engineering is the lowest-paying AI skill at $130K."
           className="mb-8"
         >
           <ResponsiveContainer width="100%" height={350}>
@@ -142,6 +145,7 @@ export default function SkillsGap() {
           title="WEF Core Skills for 2030"
           subtitle={<>Top skills employers rank as most important by 2030 (<InfoTooltip term="WEF" />)</>}
           source="World Economic Forum, Future of Jobs Report 2025"
+          summary="Analytical thinking is #1, and AI/Big Data is only #3. Employers actually rank resilience, flexibility, and creative thinking just as high as technical skills."
           className="mb-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 py-4">

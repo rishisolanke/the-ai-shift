@@ -57,6 +57,7 @@ export default function Environmental() {
           subtitle={<>Actual through 2024, <InfoTooltip term="IEA" /> projections 2025-2030. 945 TWh exceeds Japan's total consumption.</>}
           source="International Energy Agency (IEA), Energy and AI Report, April 2025"
           calculationKey="env.energy_chart"
+          summary="Data centers used 260 TWh in 2020 and are on track for 945 TWh by 2030. That's nearly 4x growth in a decade, and the curve is only getting steeper."
           className="mb-8"
         >
           <ResponsiveContainer width="100%" height={350}>
@@ -91,6 +92,7 @@ export default function Environmental() {
           subtitle="By 2035, AI's reduction potential outweighs its own emissions by 32x"
           source="Cornell/Xiao Nature Sustainability 2025; IEA 2025"
           calculationKey="env.emissions_bar"
+          summary="AI adds about 44 Mt of CO2 per year by 2030, but it could help cut 1,400 Mt per year by 2035. The reduction potential dwarfs the footprint, but only if we actually apply AI to energy and climate problems."
           className="mb-8"
         >
           <ResponsiveContainer width="100%" height={280}>
@@ -116,6 +118,7 @@ export default function Environmental() {
             title="The Green Paradox"
             subtitle="AI adds emissions but also enables large-scale reductions"
             source="Cornell/Xiao 2025 (emissions); IEA 2025 (reductions)"
+            summary="The bar showing AI's own emissions (24-44 Mt) barely registers next to the 1,400 Mt it could help eliminate. The scale difference is 32x."
           >
             <div className="space-y-6 py-4">
               <div>
@@ -147,6 +150,7 @@ export default function Environmental() {
             title="Key Environmental Metrics"
             subtitle="Data center environmental footprint"
             source="Goldman Sachs; Cornell/Xiao Nature Sustainability 2025; Google 2025 Environmental Report"
+            summary="60% of new data center power still comes from fossil fuels, and water usage by 2030 could serve 6-10 million Americans. Google's own emissions went up 13% in 2023."
           >
             <div className="space-y-4 py-4">
               {[

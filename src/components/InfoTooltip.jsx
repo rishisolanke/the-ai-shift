@@ -72,11 +72,11 @@ export default function InfoTooltip({ term, children }) {
   return (
     <>
       <span className="inline-flex items-center gap-0.5 ml-0.5">
-        <span className="underline decoration-dotted decoration-text-faint underline-offset-2 cursor-help" onClick={() => setOpen(!open)}>{term}</span>
+        <span className="underline decoration-dotted decoration-accent-green/40 underline-offset-2 cursor-help" onClick={() => setOpen(!open)}>{term}</span>
         <button
           ref={triggerRef}
           onClick={() => setOpen(!open)}
-          className="text-text-faint hover:text-accent-green transition-colors"
+          className="text-accent-green/40 hover:text-accent-green transition-colors"
           aria-label={`What is ${term}?`}
         >
           <Info size={11} />

@@ -77,6 +77,7 @@ export default function CountryAdoption() {
             subtitle="Some developing countries are outpacing wealthy ones in AI usage"
             source="Microsoft AI Diffusion Q1 2026; World Bank GDP data"
             calculationKey="country.scatter_chart"
+            summary="India has 40% AI adoption on a GDP per capita of just $2,389, while the US sits at only 34% with $76K GDP per capita. Being rich doesn't automatically mean you use AI more."
           >
             <ResponsiveContainer width="100%" height={350}>
               <ScatterChart margin={{ left: 20, right: 20, bottom: 20 }}>
@@ -120,6 +121,7 @@ export default function CountryAdoption() {
             subtitle="6-month growth rate (H1 2025 → Q1 2026)"
             source="Microsoft AI Diffusion Report, Q1 2026"
             calculationKey="country.growth_chart"
+            summary="South Korea's AI adoption grew 43% in just six months, and the Philippines isn't far behind at 39%. Most of the fastest growers are in Asia."
           >
             <ResponsiveContainer width="100%" height={350}>
               <BarChart data={FASTEST_GROWING} layout="vertical" margin={{ left: 100, right: 20 }}>
@@ -141,6 +143,7 @@ export default function CountryAdoption() {
           subtitle="The US outspends China 23x on private AI investment"
           source="Stanford AI Index Report 2026"
           calculationKey="country.investment_chart"
+          summary="The US poured $286B into private AI investment in 2025, which is more than every other country combined. China came in second at $12.4B, and everyone else is in single digits."
           className="mb-8"
         >
           <ResponsiveContainer width="100%" height={300}>

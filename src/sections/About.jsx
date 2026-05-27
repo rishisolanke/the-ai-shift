@@ -78,7 +78,7 @@ export default function About() {
           </div>
 
           <p className="mt-8 text-xs text-text-secondary/40">
-            Built by Rushikesh Solanke | 2025
+            Built by Rushikesh Solanke | 2026
           </p>
         </div>
       </div>

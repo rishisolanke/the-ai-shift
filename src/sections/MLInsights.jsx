@@ -72,6 +72,7 @@ export default function MLInsights() {
             subtitle="Countries grouped by AI adoption, GDP, preparedness, internet access, and R&D spending"
             source="Model trained on: Microsoft AI Diffusion, World Bank, IMF AIPI data"
             calculationKey="ml.clustering"
+            summary="Four clear groups pop out: the US, Singapore, UK, and UAE as AI Leaders, then a middle tier of advancing nations like Germany and Japan, and India and the Philippines as aspiring countries punching above their weight."
           >
             <ResponsiveContainer width="100%" height={350}>
               <ScatterChart margin={{ left: 20, right: 20, bottom: 30 }}>
@@ -109,6 +110,7 @@ export default function MLInsights() {
             subtitle={<><InfoTooltip term="SHAP values" /> showing which factors best predict automation displacement</>}
             source="Model trained on BLS Projections + EIG AI Exposure Scores"
             calculationKey="ml.xgboost"
+            summary="Median wage is the strongest predictor of job automation risk at 0.28, followed by AI exposure score at 0.22. Interestingly, how much training a job requires barely matters (0.03)."
           >
             <ResponsiveContainer width="100%" height={350}>
               <BarChart data={FEATURE_IMPORTANCE} layout="vertical" margin={{ left: 140, right: 20 }}>
@@ -134,6 +136,7 @@ export default function MLInsights() {
           subtitle="LSTM model trained on 2020-2025 data, forecasting through 2026"
           source="Model trained on Kaggle Layoffs + Indeed Job Postings data"
           calculationKey="ml.lstm"
+          summary="The model sees layoffs trending upward, from about 24K in April 2025 to a predicted 29K by October 2026. There's a seasonal pattern too, with dips in Q1 and Q3."
           className="mb-8"
         >
           <ResponsiveContainer width="100%" height={300}>
