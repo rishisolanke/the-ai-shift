@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Github, Linkedin } from 'lucide-react';
+import { Menu, X, Github, Linkedin, User } from 'lucide-react';
 
 const NAV_ITEMS = [
   { id: 'about', label: 'About' },
@@ -39,7 +39,16 @@ export default function Layout({ children }) {
 
             <div className="flex items-center gap-3">
               <a
-                href="https://github.com"
+                href="https://rishisolanke.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-muted hover:text-accent-green transition-colors"
+                title="Portfolio"
+              >
+                <User size={18} />
+              </a>
+              <a
+                href="https://github.com/rishisolanke/the-ai-shift"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-muted hover:text-accent-green transition-colors"
@@ -47,7 +56,7 @@ export default function Layout({ children }) {
                 <Github size={18} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/rushikesh-solanke"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-muted hover:text-accent-green transition-colors"
@@ -87,12 +96,20 @@ export default function Layout({ children }) {
       <footer className="border-t border-white/[0.06] py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-text-secondary text-sm">
-            Built by <span className="text-accent-green font-medium">Rushikesh Solanke</span> |
+            Built by <a href="https://rishisolanke.github.io" target="_blank" rel="noopener noreferrer" className="text-accent-green font-medium hover:underline">Rushikesh Solanke</a> |
             Data sourced from BLS, World Bank, IMF, EPA, Census Bureau, and more
           </p>
           <p className="text-text-muted text-xs mt-2">
             Every number is traceable to a verified public source. No data was fabricated.
           </p>
+          <a
+            href="https://rishisolanke.github.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 text-sm text-accent-green/70 hover:text-accent-green transition-colors"
+          >
+            ← Back to my portfolio
+          </a>
         </div>
       </footer>
     </div>

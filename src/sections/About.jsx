@@ -51,7 +51,7 @@ export default function About() {
 
           <div className="flex items-center justify-center gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/rishisolanke/the-ai-shift"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
@@ -60,7 +60,7 @@ export default function About() {
               <span className="text-sm">GitHub</span>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/rushikesh-solanke"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
