@@ -42,7 +42,7 @@
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-green via-accent-blue to-accent-purple;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-green via-accent-green/80 to-accent-yellow;
   }
 
   .card {

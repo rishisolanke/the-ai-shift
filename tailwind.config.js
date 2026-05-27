@@ -11,13 +11,9 @@ export default {
         },
         accent: {
           green: '#00e676',
-          blue: '#4F7DF2',
-          purple: '#a070ff',
           yellow: '#ffd740',
           red: '#ff5252',
           orange: '#FFAB40',
-          pink: '#ff6090',
-          cyan: '#22D3EE',
         },
         text: {
           primary: '#e0e0e0',

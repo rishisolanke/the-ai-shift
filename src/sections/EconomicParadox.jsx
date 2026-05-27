@@ -48,7 +48,7 @@ export default function EconomicParadox() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          <StatCard number={<>~$660B</>} label={<>AI <InfoTooltip term="Capex" /> spending (2026)</>} source="Various estimates" color="text-accent-blue" calculationKey="economic.660b_capex" />
+          <StatCard number={<>~$660B</>} label={<>AI <InfoTooltip term="Capex" /> spending (2026)</>} source="Various estimates" color="text-accent-green" calculationKey="economic.660b_capex" />
           <StatCard number="~0%" label={<>AI contribution to US <InfoTooltip term="GDP" /> (2025)</>} source="Goldman Sachs" color="text-accent-red" calculationKey="economic.0pct_gdp" />
           <StatCard number="75%" label="Data center cost = imports" source="Goldman Sachs" color="text-accent-yellow" calculationKey="economic.75pct_imports" />
           <StatCard number="95%" label="AI pilots never past testing" source="MIT, 2025" color="text-accent-red" calculationKey="economic.95pct_pilots" />
@@ -82,7 +82,7 @@ export default function EconomicParadox() {
                 <Tooltip
                   contentStyle={{ background: CHART_THEME.tooltipBg, border: `1px solid ${CHART_THEME.tooltipBorder}`, borderRadius: 14 }}
                 />
-                <Bar yAxisId="left" dataKey="investment" fill={COLORS.blue} fillOpacity={0.7} radius={[4, 4, 0, 0]} name="AI Investment ($B)" />
+                <Bar yAxisId="left" dataKey="investment" fill={COLORS.green} fillOpacity={0.7} radius={[4, 4, 0, 0]} name="AI Investment ($B)" />
                 <Line yAxisId="right" type="monotone" dataKey="gdp_contribution" stroke={COLORS.red} strokeWidth={2} name="GDP Contribution (%)" dot={{ fill: COLORS.red }} />
               </BarChart>
             </ResponsiveContainer>
@@ -131,7 +131,7 @@ export default function EconomicParadox() {
             {HARDWARE_FLOW.map((item, i) => (
               <div key={i} className="flex items-center gap-3">
                 <div className="text-center">
-                  <div className={`font-mono text-2xl font-bold ${i === 3 ? 'text-accent-red' : 'text-accent-blue'}`}>
+                  <div className={`font-mono text-2xl font-bold ${i === 3 ? 'text-accent-red' : 'text-accent-green'}`}>
                     {typeof item.value === 'number' ? `$${item.value}B` : item.value}
                   </div>
                   <div className="text-xs text-text-secondary mt-1 max-w-[120px]">{item.step}</div>

@@ -38,7 +38,7 @@ export default function SkillsGap() {
     <section id="skills" className="border-t border-white/[0.06]">
       <div className="section-container">
         <div className="mb-12">
-          <span className="text-xs font-mono uppercase tracking-wider text-accent-pink">Dimension 7</span>
+          <span className="text-xs font-mono uppercase tracking-wider text-accent-red">Dimension 7</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-4">The Skills Gap</h2>
           <p className="text-text-secondary max-w-3xl text-lg">
             Automation risk is 11x higher for workers without university degrees (22% vs 2%).
@@ -50,7 +50,7 @@ export default function SkillsGap() {
           <StatCard number="22%" label={<>Automation risk (lower education) <InfoTooltip term="OECD" /></>} source="OECD" color="text-accent-red" calculationKey="skills.22pct_lower_edu" />
           <StatCard number="2%" label="Automation risk (university)" source="OECD" color="text-accent-green" calculationKey="skills.2pct_university" />
           <StatCard number="14%" label={<>Workers needing career change by 2030 <InfoTooltip term="WEF" /></>} source="WEF, 2025" color="text-accent-yellow" calculationKey="skills.14pct_career_change" />
-          <StatCard number="$170K" label="Median pay, data analysis AI roles" source="Industry surveys" color="text-accent-blue" calculationKey="skills.170k_median" />
+          <StatCard number="$170K" label="Median pay, data analysis AI roles" source="Industry surveys" color="text-accent-green" calculationKey="skills.170k_median" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-8">
@@ -91,7 +91,7 @@ export default function SkillsGap() {
                   contentStyle={{ background: CHART_THEME.tooltipBg, border: `1px solid ${CHART_THEME.tooltipBorder}`, borderRadius: 14 }}
                   formatter={(v, name) => [v.toLocaleString(), name === 'demand' ? 'Open Roles' : '']}
                 />
-                <Bar dataKey="demand" radius={[0, 4, 4, 0]} fill={COLORS.blue} fillOpacity={0.7} />
+                <Bar dataKey="demand" radius={[0, 4, 4, 0]} fill={COLORS.green} fillOpacity={0.7} />
               </BarChart>
             </ResponsiveContainer>
           </ChartContainer>
@@ -106,7 +106,7 @@ export default function SkillsGap() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 py-4">
             {WEF_SKILLS_2030.map((item) => (
               <div key={item.rank} className="flex items-center gap-3 p-3 rounded-lg bg-primary/50 border border-white/[0.06]">
-                <div className="w-8 h-8 rounded-full bg-accent-purple/20 flex items-center justify-center text-accent-purple font-mono font-bold text-sm">
+                <div className="w-8 h-8 rounded-full bg-accent-green/20 flex items-center justify-center text-accent-green font-mono font-bold text-sm">
                   {item.rank}
                 </div>
                 <span className="text-sm text-text-primary">{item.skill}</span>

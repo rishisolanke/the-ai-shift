@@ -1,4 +1,4 @@
-import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell } from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell, LabelList } from 'recharts';
 import ChartContainer from '../components/ChartContainer';
 import StatCard from '../components/StatCard';
 import SourceCitation from '../components/SourceCitation';
@@ -47,12 +47,16 @@ const AI_INVESTMENT = [
   { country: 'Israel', investment: 1.6 },
 ];
 
+const CustomScatterLabel = ({ cx, cy, payload }) => (
+  <text x={cx} y={cy - 10} textAnchor="middle" fill="#a0a0a0" fontSize={9}>{payload.country}</text>
+);
+
 export default function CountryAdoption() {
   return (
     <section id="countries" className="border-t border-white/[0.06]">
       <div className="section-container">
         <div className="mb-12">
-          <span className="text-xs font-mono uppercase tracking-wider text-accent-purple">Dimension 3</span>
+          <span className="text-xs font-mono uppercase tracking-wider text-accent-yellow">Dimension 3</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-4">Global AI Adoption</h2>
           <p className="text-text-secondary max-w-3xl text-lg">
             The UAE leads global AI adoption at 70%, while the US — despite being #1 in AI building —
@@ -62,8 +66,8 @@ export default function CountryAdoption() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <StatCard number="70%+" label="UAE adoption (global #1)" source="Microsoft AI Diffusion, Q1 2026" color="text-accent-green" calculationKey="country.70pct_uae" />
-          <StatCard number="16.3%" label="Global working-age population uses AI" source="Microsoft, 2026" color="text-accent-blue" calculationKey="country.16pct_global" />
-          <StatCard number="+43.2%" label="South Korea growth (6 months)" source="Microsoft AI Diffusion" color="text-accent-purple" calculationKey="country.43pct_korea" />
+          <StatCard number="16.3%" label="Global working-age population uses AI" source="Microsoft, 2026" color="text-accent-green" calculationKey="country.16pct_global" />
+          <StatCard number="+43.2%" label="South Korea growth (6 months)" source="Microsoft AI Diffusion" color="text-accent-yellow" calculationKey="country.43pct_korea" />
           <StatCard number="$1.81T" label="Global AI market by 2030" source="Various estimates" color="text-accent-yellow" calculationKey="country.1_81t_market" />
         </div>
 
@@ -101,7 +105,12 @@ export default function CountryAdoption() {
                   }}
                   labelFormatter={(_, payload) => payload[0]?.payload?.country || ''}
                 />
-                <Scatter data={ADOPTION_BY_COUNTRY} fill={COLORS.purple} fillOpacity={0.7} />
+                <Scatter data={ADOPTION_BY_COUNTRY} fill={COLORS.green} fillOpacity={0.7} shape={<CustomScatterLabel />}>
+                  {ADOPTION_BY_COUNTRY.map((_, i) => (
+                    <Cell key={i} fill={COLORS.green} fillOpacity={0.7} />
+                  ))}
+                </Scatter>
+                <Scatter data={ADOPTION_BY_COUNTRY} fill={COLORS.green} fillOpacity={0.7} />
               </ScatterChart>
             </ResponsiveContainer>
           </ChartContainer>
@@ -121,7 +130,7 @@ export default function CountryAdoption() {
                   contentStyle={{ background: CHART_THEME.tooltipBg, border: `1px solid ${CHART_THEME.tooltipBorder}`, borderRadius: 14 }}
                   formatter={(v) => [`+${v}%`, 'Growth']}
                 />
-                <Bar dataKey="growth" radius={[0, 4, 4, 0]} fill={COLORS.purple} fillOpacity={0.8} />
+                <Bar dataKey="growth" radius={[0, 4, 4, 0]} fill={COLORS.yellow} fillOpacity={0.8} />
               </BarChart>
             </ResponsiveContainer>
           </ChartContainer>
@@ -145,7 +154,7 @@ export default function CountryAdoption() {
               />
               <Bar dataKey="investment" radius={[0, 4, 4, 0]}>
                 {AI_INVESTMENT.map((entry, i) => (
-                  <Cell key={i} fill={i === 0 ? COLORS.blue : COLORS.purple} fillOpacity={0.8} />
+                  <Cell key={i} fill={i === 0 ? COLORS.green : COLORS.yellow} fillOpacity={0.8} />
                 ))}
               </Bar>
             </BarChart>

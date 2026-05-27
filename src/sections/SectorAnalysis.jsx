@@ -41,8 +41,8 @@ export default function SectorAnalysis() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          <StatCard number="~18%" label={<>US firms adopted AI (year-end 2025) <InfoTooltip term="Census BTOS" /></>} source="Census BTOS" color="text-accent-blue" calculationKey="sector.18pct_adoption" />
-          <StatCard number="75%" label="Knowledge workers using AI tools" source="McKinsey, 2025" color="text-accent-purple" calculationKey="sector.75pct_knowledge" />
+          <StatCard number="~18%" label={<>US firms adopted AI (year-end 2025) <InfoTooltip term="Census BTOS" /></>} source="Census BTOS" color="text-accent-green" calculationKey="sector.18pct_adoption" />
+          <StatCard number="75%" label="Knowledge workers using AI tools" source="McKinsey, 2025" color="text-accent-yellow" calculationKey="sector.75pct_knowledge" />
           <StatCard number="2M" label="Manufacturing jobs at risk by 2026" source="MIT/BU" color="text-accent-red" calculationKey="sector.2m_manufacturing" />
           <StatCard number="65%" label="Cashier jobs facing automation" source="Various estimates" color="text-accent-yellow" calculationKey="sector.65pct_cashier" />
         </div>
@@ -65,7 +65,7 @@ export default function SectorAnalysis() {
               />
               <Bar dataKey="adoption" radius={[0, 4, 4, 0]}>
                 {SECTOR_ADOPTION.map((entry, i) => (
-                  <Cell key={i} fill={entry.adoption > 20 ? COLORS.blue : entry.adoption > 10 ? COLORS.purple : COLORS.yellow} fillOpacity={0.8} />
+                  <Cell key={i} fill={entry.adoption > 20 ? COLORS.green : entry.adoption > 10 ? COLORS.yellow : COLORS.orange} fillOpacity={0.8} />
                 ))}
               </Bar>
             </BarChart>

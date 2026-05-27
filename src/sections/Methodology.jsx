@@ -55,7 +55,7 @@ export default function Methodology() {
 
           <div className="card">
             <div className="flex items-center gap-3 mb-4">
-              <Code size={20} className="text-accent-purple" />
+              <Code size={20} className="text-accent-green" />
               <h3 className="text-lg font-semibold">Technical Stack</h3>
             </div>
             <ul className="space-y-2 text-sm text-text-secondary">

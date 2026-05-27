@@ -1,23 +1,15 @@
 export const COLORS = {
   green: '#00e676',
-  blue: '#4F7DF2',
-  purple: '#a070ff',
   yellow: '#ffd740',
   red: '#ff5252',
   orange: '#FFAB40',
-  pink: '#ff6090',
-  cyan: '#22D3EE',
 };
 
 export const CHART_COLORS = [
   COLORS.green,
-  COLORS.blue,
-  COLORS.purple,
   COLORS.yellow,
-  COLORS.cyan,
-  COLORS.orange,
-  COLORS.pink,
   COLORS.red,
+  COLORS.orange,
 ];
 
 export const BG = {

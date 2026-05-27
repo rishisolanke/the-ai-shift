@@ -7,10 +7,10 @@ import { METHODOLOGY } from '../data/methodology';
 const STATS = [
   { value: 92, suffix: 'M', label: 'Jobs displaced by 2030', source: 'World Economic Forum, 2025', color: 'text-accent-red', calcKey: 'hero.92m_displaced' },
   { value: 170, suffix: 'M', label: 'New jobs created', source: 'World Economic Forum, 2025', color: 'text-accent-green', calcKey: 'hero.170m_created' },
-  { value: 285.9, suffix: 'B', prefix: '$', label: 'US AI investment in 2025', source: 'Stanford AI Index, 2026', color: 'text-accent-blue', calcKey: 'hero.285b_investment' },
+  { value: 285.9, suffix: 'B', prefix: '$', label: 'US AI investment in 2025', source: 'Stanford AI Index, 2026', color: 'text-accent-green', calcKey: 'hero.285b_investment' },
   { value: 945, suffix: ' TWh', label: 'Projected data center electricity by 2030', source: 'IEA, 2025', color: 'text-accent-yellow', calcKey: 'hero.945twh' },
-  { value: 16.3, suffix: '%', label: 'Global AI adoption rate', source: 'Microsoft AI Diffusion, 2026', color: 'text-accent-purple', calcKey: 'hero.16pct_adoption' },
-  { value: 56, suffix: '%', label: 'AI skills wage premium', source: 'PwC, 2025', color: 'text-accent-blue', calcKey: 'hero.56pct_premium' },
+  { value: 16.3, suffix: '%', label: 'Global AI adoption rate', source: 'Microsoft AI Diffusion, 2026', color: 'text-accent-yellow', calcKey: 'hero.16pct_adoption' },
+  { value: 56, suffix: '%', label: 'AI skills wage premium', source: 'PwC, 2025', color: 'text-accent-green', calcKey: 'hero.56pct_premium' },
 ];
 
 function AnimatedCounter({ value, prefix = '', suffix = '', duration = 2000, start }) {
@@ -49,12 +49,19 @@ export default function Hero() {
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-text-secondary font-light leading-relaxed">
-            A data-driven analysis of AI's global impact across employment, economy,
-            environment, and society — built on{' '}
-            <span className="text-text-primary font-semibold">12+ verified data sources</span>.
+            What is AI <em>actually</em> doing to the world? Not the hype, not the doom —
+            just what the data says. This project analyzes <span className="text-text-primary font-semibold">12+ verified sources</span> across
+            employment, economy, environment, and skills to find the real patterns.
           </p>
-          <p className="mt-4 text-sm text-text-muted">
-            By Rushikesh Solanke | Every number traceable to source
+          <p className="mt-4 text-sm text-text-muted leading-relaxed max-w-2xl mx-auto">
+            Every number on this page traces back to a public source. Click any
+            <span className="text-accent-green mx-1">dotted-underlined term</span>
+            for a plain-English definition, or expand
+            <span className="text-accent-green mx-1">"How was this calculated?"</span>
+            below any chart for methodology.
+          </p>
+          <p className="mt-3 text-xs text-text-faint">
+            By Rushikesh Solanke
           </p>
         </div>
 

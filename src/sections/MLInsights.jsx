@@ -21,9 +21,9 @@ const CLUSTER_DATA = [
 ];
 
 const CLUSTER_COLORS = {
-  'AI Leaders': COLORS.blue,
-  'AI Advancing': COLORS.green,
-  'AI Aspiring': COLORS.yellow,
+  'AI Leaders': COLORS.green,
+  'AI Advancing': COLORS.yellow,
+  'AI Aspiring': COLORS.orange,
   'AI Emerging': COLORS.red,
 };
 
@@ -121,7 +121,7 @@ export default function MLInsights() {
                 />
                 <Bar dataKey="importance" radius={[0, 4, 4, 0]}>
                   {FEATURE_IMPORTANCE.map((_, i) => (
-                    <Cell key={i} fill={COLORS.blue} fillOpacity={0.6 + (i === 0 ? 0.3 : 0)} />
+                    <Cell key={i} fill={COLORS.green} fillOpacity={0.6 + (i === 0 ? 0.3 : 0)} />
                   ))}
                 </Bar>
               </BarChart>
@@ -145,17 +145,17 @@ export default function MLInsights() {
                 contentStyle={{ background: CHART_THEME.tooltipBg, border: `1px solid ${CHART_THEME.tooltipBorder}`, borderRadius: 14 }}
                 formatter={(v) => v ? [v.toLocaleString(), ''] : ['-', '']}
               />
-              <Line type="monotone" dataKey="actual" stroke={COLORS.blue} strokeWidth={2} dot={{ fill: COLORS.blue, r: 3 }} name="Actual" connectNulls={false} />
-              <Line type="monotone" dataKey="predicted" stroke={COLORS.purple} strokeWidth={2} strokeDasharray="5 5" dot={{ fill: COLORS.purple, r: 3 }} name="Forecast" connectNulls={false} />
+              <Line type="monotone" dataKey="actual" stroke={COLORS.green} strokeWidth={2} dot={{ fill: COLORS.green, r: 3 }} name="Actual" connectNulls={false} />
+              <Line type="monotone" dataKey="predicted" stroke={COLORS.yellow} strokeWidth={2} strokeDasharray="5 5" dot={{ fill: COLORS.yellow, r: 3 }} name="Forecast" connectNulls={false} />
             </LineChart>
           </ResponsiveContainer>
           <div className="flex gap-4 mt-3 text-xs text-text-secondary">
             <div className="flex items-center gap-2">
-              <div className="w-4 h-0.5 bg-accent-blue" />
+              <div className="w-4 h-0.5 bg-accent-green" />
               Actual
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-4 h-0.5 bg-accent-purple border-dashed" style={{ borderTop: '2px dashed' }} />
+              <div className="w-4 h-0.5 bg-accent-yellow" style={{ borderTop: '2px dashed' }} />
               Forecast
             </div>
           </div>
