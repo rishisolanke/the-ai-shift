@@ -9,14 +9,16 @@ export default function ChartContainer({ title, subtitle, source, calculationKey
   return (
     <div
       ref={ref}
-      className={`card transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} ${className}`}
+      className={`card overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} ${className}`}
     >
       <div className="mb-4">
         <h3 className="text-lg font-semibold text-text-primary">{title}</h3>
         {subtitle && <p className="text-sm text-text-secondary mt-1">{subtitle}</p>}
       </div>
 
-      <div className="w-full min-h-[300px]">{children}</div>
+      <div className="w-full min-h-[200px] sm:min-h-[300px] overflow-x-auto -mx-2 px-2">
+        <div className="min-w-[420px] sm:min-w-0">{children}</div>
+      </div>
 
       {summary && (
         <p className="mt-3 text-sm text-text-secondary/80 leading-relaxed">

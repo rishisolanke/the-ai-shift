@@ -57,10 +57,18 @@
   }
 
   .card {
-    @apply bg-primary-card rounded-card border border-white/[0.06] p-6;
+    @apply bg-primary-card rounded-card border border-white/[0.06] p-4 sm:p-6;
   }
 
   .stat-number {
-    @apply font-mono text-4xl sm:text-5xl font-bold;
+    @apply font-mono text-2xl sm:text-4xl md:text-5xl font-bold;
+  }
+}
+
+/* ── Mobile fixes ── */
+@media (max-width: 640px) {
+  .section-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

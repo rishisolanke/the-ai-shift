@@ -3,6 +3,7 @@ import ChartContainer from '../components/ChartContainer';
 import StatCard from '../components/StatCard';
 import SourceCitation from '../components/SourceCitation';
 import InfoTooltip from '../components/InfoTooltip';
+import { useMobile } from '../hooks/useMobile';
 import { COLORS, CHART_THEME } from '../utils/colors';
 
 const ADOPTION_BY_COUNTRY = [
@@ -52,6 +53,8 @@ const CustomScatterLabel = ({ cx, cy, payload }) => (
 );
 
 export default function CountryAdoption() {
+  const isMobile = useMobile();
+
   return (
     <section id="countries" className="border-t border-white/[0.06]">
       <div className="section-container">
@@ -124,10 +127,10 @@ export default function CountryAdoption() {
             summary="South Korea's AI adoption grew 43% in just six months, and the Philippines isn't far behind at 39%. Most of the fastest growers are in Asia."
           >
             <ResponsiveContainer width="100%" height={350}>
-              <BarChart data={FASTEST_GROWING} layout="vertical" margin={{ left: 100, right: 20 }}>
+              <BarChart data={FASTEST_GROWING} layout="vertical" margin={{ left: isMobile ? 70 : 100, right: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
                 <XAxis type="number" tick={{ fill: CHART_THEME.axisLabel, fontSize: 12 }} tickFormatter={(v) => `+${v}%`} />
-                <YAxis type="category" dataKey="country" tick={{ fill: CHART_THEME.axisPrimary, fontSize: 11 }} width={90} />
+                <YAxis type="category" dataKey="country" tick={{ fill: CHART_THEME.axisPrimary, fontSize: isMobile ? 9 : 11 }} width={isMobile ? 60 : 90} />
                 <Tooltip
                   contentStyle={{ background: CHART_THEME.tooltipBg, border: `1px solid ${CHART_THEME.tooltipBorder}`, borderRadius: 14 }}
                   formatter={(v) => [`+${v}%`, 'Growth']}
@@ -147,10 +150,10 @@ export default function CountryAdoption() {
           className="mb-8"
         >
           <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={AI_INVESTMENT} layout="vertical" margin={{ left: 120, right: 40 }}>
+            <BarChart data={AI_INVESTMENT} layout="vertical" margin={{ left: isMobile ? 80 : 120, right: 40 }}>
               <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
               <XAxis type="number" tick={{ fill: CHART_THEME.axisLabel, fontSize: 12 }} tickFormatter={(v) => `$${v}B`} />
-              <YAxis type="category" dataKey="country" tick={{ fill: CHART_THEME.axisPrimary, fontSize: 11 }} width={110} />
+              <YAxis type="category" dataKey="country" tick={{ fill: CHART_THEME.axisPrimary, fontSize: isMobile ? 9 : 11 }} width={isMobile ? 70 : 110} />
               <Tooltip
                 contentStyle={{ background: CHART_THEME.tooltipBg, border: `1px solid ${CHART_THEME.tooltipBorder}`, borderRadius: 14 }}
                 formatter={(v) => [`$${v}B`, 'Investment']}

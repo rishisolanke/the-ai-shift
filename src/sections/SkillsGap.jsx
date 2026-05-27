@@ -3,6 +3,7 @@ import ChartContainer from '../components/ChartContainer';
 import StatCard from '../components/StatCard';
 import SourceCitation from '../components/SourceCitation';
 import InfoTooltip from '../components/InfoTooltip';
+import { useMobile } from '../hooks/useMobile';
 import { COLORS, CHART_THEME } from '../utils/colors';
 
 const RISK_BY_EDUCATION = [
@@ -34,6 +35,8 @@ const WEF_SKILLS_2030 = [
 ];
 
 export default function SkillsGap() {
+  const isMobile = useMobile();
+
   return (
     <section id="skills" className="border-t border-white/[0.06]">
       <div className="section-container">
@@ -85,10 +88,10 @@ export default function SkillsGap() {
             summary="Data analysis leads with 58K open roles, followed by machine learning at 42K. Even the smallest category here (prompt engineering) still has nearly 10K openings."
           >
             <ResponsiveContainer width="100%" height={350}>
-              <BarChart data={TOP_AI_SKILLS} layout="vertical" margin={{ left: 160, right: 20 }}>
+              <BarChart data={TOP_AI_SKILLS} layout="vertical" margin={{ left: isMobile ? 100 : 160, right: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
                 <XAxis type="number" tick={{ fill: CHART_THEME.axisLabel, fontSize: 11 }} tickFormatter={(v) => `${(v / 1000).toFixed(0)}K`} />
-                <YAxis type="category" dataKey="skill" tick={{ fill: CHART_THEME.axisPrimary, fontSize: 10 }} width={150} />
+                <YAxis type="category" dataKey="skill" tick={{ fill: CHART_THEME.axisPrimary, fontSize: isMobile ? 9 : 10 }} width={isMobile ? 90 : 150} />
                 <Tooltip
                   contentStyle={{ background: CHART_THEME.tooltipBg, border: `1px solid ${CHART_THEME.tooltipBorder}`, borderRadius: 14 }}
                   formatter={(v, name) => [v.toLocaleString(), name === 'demand' ? 'Open Roles' : '']}

@@ -1,6 +1,7 @@
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell, LineChart, Line } from 'recharts';
 import ChartContainer from '../components/ChartContainer';
 import InfoTooltip from '../components/InfoTooltip';
+import { useMobile } from '../hooks/useMobile';
 import { COLORS, CHART_THEME } from '../utils/colors';
 
 const CLUSTER_DATA = [
@@ -53,6 +54,8 @@ const FORECAST_DATA = [
 ];
 
 export default function MLInsights() {
+  const isMobile = useMobile();
+
   return (
     <section id="ml-insights" className="border-t border-white/[0.06]">
       <div className="section-container">
@@ -113,10 +116,10 @@ export default function MLInsights() {
             summary="Median wage is the strongest predictor of job automation risk at 0.28, followed by AI exposure score at 0.22. Interestingly, how much training a job requires barely matters (0.03)."
           >
             <ResponsiveContainer width="100%" height={350}>
-              <BarChart data={FEATURE_IMPORTANCE} layout="vertical" margin={{ left: 140, right: 20 }}>
+              <BarChart data={FEATURE_IMPORTANCE} layout="vertical" margin={{ left: isMobile ? 100 : 140, right: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
                 <XAxis type="number" tick={{ fill: CHART_THEME.axisLabel, fontSize: 12 }} tickFormatter={(v) => v.toFixed(2)} />
-                <YAxis type="category" dataKey="feature" tick={{ fill: CHART_THEME.axisPrimary, fontSize: 11 }} width={130} />
+                <YAxis type="category" dataKey="feature" tick={{ fill: CHART_THEME.axisPrimary, fontSize: isMobile ? 9 : 11 }} width={isMobile ? 90 : 130} />
                 <Tooltip
                   contentStyle={{ background: CHART_THEME.tooltipBg, border: `1px solid ${CHART_THEME.tooltipBorder}`, borderRadius: 14 }}
                   formatter={(v) => [v.toFixed(3), 'Importance']}

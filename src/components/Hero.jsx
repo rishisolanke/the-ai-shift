@@ -73,9 +73,9 @@ export default function Hero() {
           {STATS.map((stat) => (
             <div
               key={stat.label}
-              className="bg-primary-card border border-white/[0.06] rounded-card p-6 text-center group hover:border-accent-green/20 transition-all duration-300"
+              className="bg-primary-card border border-white/[0.06] rounded-card p-3 sm:p-6 text-center group hover:border-accent-green/20 transition-all duration-300"
             >
-              <div className={`stat-number ${stat.color}`}>
+              <div className={`stat-number ${stat.color} break-words`}>
                 <AnimatedCounter
                   value={stat.value}
                   prefix={stat.prefix || ''}

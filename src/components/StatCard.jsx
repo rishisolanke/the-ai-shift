@@ -6,8 +6,8 @@ export default function StatCard({ number, label, source, color = 'text-accent-g
 
   return (
     <div className="card group hover:border-white/[0.12] transition-all">
-      <div className={`stat-number ${color}`}>{number}</div>
-      <p className="mt-2 text-sm text-text-secondary">{label}</p>
+      <div className={`stat-number ${color} break-words`}>{number}</div>
+      <p className="mt-2 text-xs sm:text-sm text-text-secondary">{label}</p>
       {source && (
         <p className="mt-1 text-xs text-text-muted group-hover:text-text-secondary transition-colors">
           Source: {source}

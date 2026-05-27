@@ -4,6 +4,7 @@ import StatCard from '../components/StatCard';
 import SourceCitation from '../components/SourceCitation';
 import InfoTooltip from '../components/InfoTooltip';
 import { useIntersection } from '../hooks/useIntersection';
+import { useMobile } from '../hooks/useMobile';
 import { COLORS, CHART_THEME } from '../utils/colors';
 
 const DECLINING_JOBS = [
@@ -43,6 +44,7 @@ const LAYOFFS_TIMELINE = [
 
 export default function Employment() {
   const [ref, isVisible] = useIntersection();
+  const isMobile = useMobile();
 
   return (
     <section id="employment" ref={ref} className="border-t border-white/[0.06]">
@@ -73,10 +75,10 @@ export default function Employment() {
             summary="Word processors and data entry keyers are taking the biggest hits, down 36% and 33%. Almost every role on this list pays under $50K and involves repetitive tasks."
           >
             <ResponsiveContainer width="100%" height={350}>
-              <BarChart data={DECLINING_JOBS} layout="vertical" margin={{ left: 140, right: 20 }}>
+              <BarChart data={DECLINING_JOBS} layout="vertical" margin={{ left: isMobile ? 100 : 140, right: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
                 <XAxis type="number" tick={{ fill: CHART_THEME.axisLabel, fontSize: 12 }} tickFormatter={(v) => `${v}%`} />
-                <YAxis type="category" dataKey="name" tick={{ fill: CHART_THEME.axisPrimary, fontSize: 11 }} width={130} />
+                <YAxis type="category" dataKey="name" tick={{ fill: CHART_THEME.axisPrimary, fontSize: isMobile ? 9 : 11 }} width={isMobile ? 90 : 130} />
                 <Tooltip
                   contentStyle={{ background: CHART_THEME.tooltipBg, border: `1px solid ${CHART_THEME.tooltipBorder}`, borderRadius: 14 }}
                   labelStyle={{ color: CHART_THEME.axisPrimary }}
@@ -99,10 +101,10 @@ export default function Employment() {
             summary="Wind turbine techs (+60%) and nurse practitioners (+52%) are leading the pack. Most of these growing roles pay well over $100K, except home health aides at $33K."
           >
             <ResponsiveContainer width="100%" height={350}>
-              <BarChart data={GROWING_JOBS} layout="vertical" margin={{ left: 160, right: 20 }}>
+              <BarChart data={GROWING_JOBS} layout="vertical" margin={{ left: isMobile ? 100 : 160, right: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke={CHART_THEME.grid} />
                 <XAxis type="number" tick={{ fill: CHART_THEME.axisLabel, fontSize: 12 }} tickFormatter={(v) => `${v}%`} />
-                <YAxis type="category" dataKey="name" tick={{ fill: CHART_THEME.axisPrimary, fontSize: 11 }} width={150} />
+                <YAxis type="category" dataKey="name" tick={{ fill: CHART_THEME.axisPrimary, fontSize: isMobile ? 9 : 11 }} width={isMobile ? 90 : 150} />
                 <Tooltip
                   contentStyle={{ background: CHART_THEME.tooltipBg, border: `1px solid ${CHART_THEME.tooltipBorder}`, borderRadius: 14 }}
                   labelStyle={{ color: CHART_THEME.axisPrimary }}
