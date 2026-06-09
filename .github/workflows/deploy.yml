@@ -23,8 +23,19 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      # Build the main site (The AI Shift) into dist/
       - run: npm ci
       - run: npm run build
+      # Build the companion site (The Addiction Atlas) and nest it under dist/the-addiction-shift/
+      - name: Build The Addiction Atlas
+        working-directory: the-addiction-shift
+        run: |
+          npm ci
+          npm run build
+      - name: Nest Atlas into main site output
+        run: |
+          rm -rf dist/the-addiction-shift
+          cp -r the-addiction-shift/dist dist/the-addiction-shift
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
