@@ -1,0 +1,122 @@
+import { useState } from 'react';
+import { Menu, X, Github, Linkedin, User } from 'lucide-react';
+
+const NAV_ITEMS = [
+  { id: 'about', label: 'About' },
+  { id: 'mortality', label: 'The Toll' },
+  { id: 'substances', label: 'Substances' },
+  { id: 'behavioral', label: 'Behavioral' },
+  { id: 'demographics', label: 'Who' },
+  { id: 'economic', label: 'Economic Cost' },
+  { id: 'treatment', label: 'Treatment Gap' },
+  { id: 'global', label: 'Global' },
+  { id: 'methodology', label: 'Methodology' },
+];
+
+export default function Layout({ children }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-primary">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/[0.85] backdrop-blur-[20px] border-b border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-12">
+            <a href="#" className="font-mono font-bold text-lg text-accent-green tracking-tight">
+              THE ADDICTION ATLAS
+            </a>
+
+            <nav className="hidden lg:flex items-center gap-1">
+              {NAV_ITEMS.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="px-3 py-1.5 text-xs font-medium text-text-muted hover:text-text-primary transition-colors"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+
+            <div className="flex items-center gap-3">
+              <a
+                href="https://rishisolanke.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-muted hover:text-accent-green transition-colors"
+                title="Portfolio"
+              >
+                <User size={18} />
+              </a>
+              <a
+                href="https://github.com/rishisolanke/the-ai-shift"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-muted hover:text-accent-green transition-colors"
+              >
+                <Github size={18} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rushikesh-solanke"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-muted hover:text-accent-green transition-colors"
+              >
+                <Linkedin size={18} />
+              </a>
+              <button
+                className="lg:hidden text-text-muted hover:text-text-primary"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-primary-light border-t border-white/[0.06]">
+            <nav className="px-4 py-4 flex flex-col gap-1">
+              {NAV_ITEMS.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="px-3 py-2 text-sm text-text-muted hover:text-text-primary rounded-lg hover:bg-white/[0.06]"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        )}
+      </header>
+
+      <main className="pt-12">{children}</main>
+
+      <footer className="border-t border-white/[0.06] py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-text-secondary text-sm">
+            Built by <a href="https://rishisolanke.github.io" target="_blank" rel="noopener noreferrer" className="text-accent-green font-medium hover:underline">Rushikesh Solanke</a> |
+            Data sourced from CDC, NIDA, SAMHSA, WHO, and more
+          </p>
+          <p className="text-text-muted text-xs mt-2">
+            Every number is traceable to a verified public source. No data was fabricated.
+          </p>
+          <p className="text-text-muted text-xs mt-3 max-w-2xl mx-auto">
+            If you or someone you know is struggling, call or text the US SAMHSA National Helpline at
+            <span className="text-accent-green"> 1-800-662-4357</span> (free, confidential, 24/7) or dial
+            <span className="text-accent-green"> 988</span> for the Suicide &amp; Crisis Lifeline.
+          </p>
+          <a
+            href="https://rishisolanke.github.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 text-sm text-accent-green/70 hover:text-accent-green transition-colors"
+          >
+            ← Back to my portfolio
+          </a>
+        </div>
+      </footer>
+    </div>
+  );
+}
